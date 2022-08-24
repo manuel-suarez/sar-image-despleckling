@@ -39,7 +39,7 @@ train_generator=generator.flow_from_directory(DATA_GEN_INPUT,
                                               batch_size=BS,
                                               follow_links=True,)
 
-
+img = next(train_generator)[0]
 plt.figure(figsize=(5,5))
-plt.imsave('figure1.png', next(train_generator)[0],cmap='gray')
+plt.imsave('figure1.png', img[:,:,0], cmap='gray')
 plt.colorbar()
