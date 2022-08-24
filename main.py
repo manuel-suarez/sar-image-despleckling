@@ -54,6 +54,7 @@ def test_model(data_generator, figname):
     noisy_img2=np.expand_dims(noisy_img2,axis=[0,-1])
     denoised_img1=model.predict(noisy_img1)
     denoised_img2=model.predict(noisy_img2)
+    plt.figure()
     fig,ax=plt.subplots(3,2,figsize=(10,12))
     mapple=ax[0,0].imshow(img1[:,:,0])
     plt.colorbar(mapple,ax=ax[0,0])
@@ -146,6 +147,7 @@ for epoch in range(0, EPOCHS):
           'loss_euclidian: ', float(loss_euclidian),
           'loss_tv: ', float(loss_tv),)
     if epoch % 5==0:
+        plt.figure()
         plt.plot(train_loss)
         plt.legend(['Total loss','Euclidian loss','Total Variation loss'])
         plt.savefig(f"plot_epoch{epoch}.png")
