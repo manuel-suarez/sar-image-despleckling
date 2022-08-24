@@ -92,6 +92,7 @@ def create_model(input_shape=(256,256,1)):
     return tf.keras.Model(inputs=input_layer,outputs=x)
 
 # Loss function
+MSE=tf.keras.losses.MeanSquaredError(reduction='none')
 def loss_fn(y_true, y_pred, l_tv=.0002):
     mse = tf.reduce_sum(MSE(y_true, y_pred))
     variational_loss = tf.image.total_variation(y_pred)
