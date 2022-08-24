@@ -10,12 +10,14 @@ import time
 from tqdm.notebook import tqdm
 import shutil
 
+print(tf.__version__)
+
 INPUT_SIZE= (64,64)
 BS=16
 ROOT_DIR="/home/est_posgrado_manuel.suarez/data/"
 
 # Preparing data
-DATASET=os.path.join(ROOT_DIR,'input/sentinel12-image-pairs-segregated-by-terrain/v_2')
+DATASET=os.path.join(ROOT_DIR,'sentinel12/v_2')
 DATA_GEN_INPUT=os.path.join(ROOT_DIR,'DATASET')
 
 if os.path.exists(DATA_GEN_INPUT):
@@ -36,3 +38,4 @@ train_generator=generator.flow_from_directory(DATA_GEN_INPUT,
                                               color_mode='grayscale',
                                               batch_size=BS,
                                               follow_links=True,)
+
