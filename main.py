@@ -148,8 +148,8 @@ for epoch in range(0, EPOCHS):
     if epoch % 5==0:
         plt.plot(train_loss)
         plt.legend(['Total loss','Euclidian loss','Total Variation loss'])
-        plt.show()
-        test_model(train_generator)
+        plt.savefig(f"plot_epoch{epoch}.png")
+        test_model(train_generator, f"figure_epoch{epoch}")
     sys.stdout.flush()
     # show timing information for the epoch
     epochEnd = time.time()
