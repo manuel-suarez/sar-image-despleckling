@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=GPU
-#SBATCH --job-name=keras-vit-without-attention
+#SBATCH --job-name=sar-image-despeckling
 #SBATCH --ntasks=1
 #SBATCH --output=result.log
 #SBATCH --mem=0
