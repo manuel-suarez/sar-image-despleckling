@@ -114,7 +114,7 @@ model=create_model(list(INPUT_SIZE)+[1])
 test_model(train_generator, 'figure2.png')
 
 # Training
-EPOCHS = 10 # The paper has trained the model for 2000 epochs
+EPOCHS = 100 # The paper has trained the model for 2000 epochs
 lr=2e-3
 
 max_var=.3
