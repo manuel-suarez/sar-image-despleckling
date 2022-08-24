@@ -7,7 +7,6 @@ import os
 from skimage.util import random_noise
 import sys
 import time
-from tqdm.notebook import tqdm
 import shutil
 
 print(tf.__version__)
@@ -132,7 +131,7 @@ for epoch in range(0, EPOCHS):
     epochStart = time.time()
     loss = 0
     loss_batch = []
-    for i in tqdm(range(0, numUpdates)):
+    for i in range(0, numUpdates):
         clean_data = next(train_generator)
 #         I Use Speckle Noise with Random Variance you can try a constant variance
         noisy_data=random_noise(clean_data,mode='speckle',var=np.random.uniform(high=max_var))
